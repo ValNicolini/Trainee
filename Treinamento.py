@@ -1,17 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
 
 @app.route('/')
 
-def homepage():
-    return 'Teste'
+def index():
+    return render_template('index.html')
+
 
 @app.route('/contatos')
 
 def contatos():
-   return '<h1>Contatos</h1>'
+   return render_template ('contatos.html')
 
 if __name__ == '__main__':
  app.run(debug=True)
