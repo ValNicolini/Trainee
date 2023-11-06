@@ -1,20 +1,29 @@
-from openpyxl import Workbook
+# from openpyxl import Workbook
+#
+# wb = Workbook()
+#
+# nome_arquivo = 'primeiro_arquivo.xlsx'
+#
+# ws1 = wb.active
+# ws1.title = 'Planilha 1'
+#
+# dados = [
+#      ['Ano', 'Lucro', 'Custos'],
+#     [2021, '30%', '40%'],
+#     [2021, '30%', '40%'],
+#     [2021, '30%', '40%']
+# ]
+# for linha in dados:
+#     ws1.append(linha)
+#
+# ws1['H13']= 13
+# wb.save(filename=nome_arquivo)
 
-wb = Workbook()
+from openpyxl import load_workbook
 
-nome_arquivo = 'primeiro_arquivo.xlsx'
+arquivo = 'C:\\Users\\silva.valdenir\\Downloads\\nomes.xlsx'
+wb = load_workbook(arquivo)
 
-ws1 = wb.active
-ws1.title = 'Planilha 1'
+planilha = wb['Planilha1']
 
-dados = [
-     ['Ano', 'Lucro', 'Custos'],
-    [2021, '30%', '40%'],
-    [2021, '30%', '40%'],
-    [2021, '30%', '40%']
-]
-for linha in dados:
-    ws1.append(linha)
-
-ws1['H13']= 13
-wb.save(filename=nome_arquivo)
+print(planilha['A2'].value)
