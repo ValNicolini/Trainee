@@ -1,3 +1,4 @@
+# AULA 56
 # from openpyxl import Workbook
 #
 # wb = Workbook()
@@ -19,11 +20,38 @@
 # ws1['H13']= 13
 # wb.save(filename=nome_arquivo)
 
-from openpyxl import load_workbook
+# AULA 57
+# from openpyxl import load_workbook
+#
+# arquivo = 'C:\\Users\\silva.valdenir\\Downloads\\nomes.xlsx'
+# wb = load_workbook(arquivo)
+#
+# planilha = wb['Planilha1']
 
-arquivo = 'C:\\Users\\silva.valdenir\\Downloads\\nomes.xlsx'
-wb = load_workbook(arquivo)
+# for i in range(2,5):
+#     print('%s tem %s anos.' % (planilha['A%s' % i].value, planilha['B%s' % i].value))
 
-planilha = wb['Planilha1']
+# AULA 59
+from openpyxl import Workbook
 
-print(planilha['A2'].value)
+print('Iniciando o robô...')
+print('Lendo dados do arquivo de texto...')
+file = open('gastos.txt', 'r', encoding='utf-8' )
+
+# lê o arquivo
+arquivo = file.read()
+
+lista = arquivo.splitlines()
+
+for i in range(0, len(lista)):
+    lista[i] = lista[i].split(',')
+
+# Criando arquivo
+print('criando arquivo excel...')
+wb = Workbook()
+ws = wb.active
+
+for row in lista:
+    ws.append(row)
+
+wb.save('gastos.xlsx')
