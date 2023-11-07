@@ -8,5 +8,5 @@ Passagem,430,Cartão
 Aluguel,650,Dinheiro
 Teatro,50,Cartão
 Roupas,220,Cartão
-Viagem,220,Cartão
+Nova Linha 1,220,Cartão
 Petshop,100,Cartão
