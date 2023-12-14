@@ -32,7 +32,7 @@
 #     print('%s tem %s anos.' % (planilha['A%s' % i].value, planilha['B%s' % i].value))
 
 # AULA 59
-from openpyxl import Workbook
+# from openpyxl import Workbook
 
 # print('Iniciando o robô...')
 # print('Lendo dados do arquivo de texto...')
